@@ -12,5 +12,11 @@ namespace MyMongoProjectNight.Entities
         public string CustomerName { get; set; }
 
         public string CustomerSurname { get; set; }
+
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string DepartmentId { get; set; }
+
+        [BsonIgnore]
+        public Department Department { get; set; }
     }
 }

@@ -18,6 +18,8 @@ namespace MyMongoProjectNight.Mapping
             CreateMap<Department, UpdateDepartmentDto>().ReverseMap();
             CreateMap<Department, ResultDepartmentDto>().ReverseMap();
             CreateMap<Department, GetByIdDepartmentDto>().ReverseMap();
+
+            CreateMap<Customer, ResultCustomerWithCategoryDto>().ForMember(x => x.DepartmentName, y => y.MapFrom(z => z.Department.DepartmentName));
         }
     }
 }

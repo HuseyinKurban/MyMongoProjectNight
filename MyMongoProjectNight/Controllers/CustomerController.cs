@@ -16,7 +16,7 @@ namespace MyMongoProjectNight.Controllers
         
         public async Task<IActionResult> CustomerList()
         {
-            var values =await _customerService.GetAllCustomerAsync();
+            var values =await _customerService.GetAllCustomerWithCategoryAsync();
             return View(values);
         }
 
